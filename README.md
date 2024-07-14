@@ -104,8 +104,6 @@ Accounts Cash](https://docs.google.com/spreadsheets/d/1G4BIDebBGKR-BSHPDdJK_vYjS
 - **Cash Inflow:** MINT
 - **Cash Outflow:** GRAPEFRUITE
 
-![Dashboard Design 1](https://prod-files-secure.s3.us-west-2.amazonaws.com/0b8dae26-2565-4356-bdc1-23d48ca44237/cf0a9005-f62c-4ae1-ad0e-f8c539f30b7d/d6ec7d91-9266-4c5b-ada4-6c05d4e7a34c.png)
-![Dashboard Design 2](https://prod-files-secure.s3.us-west-2.amazonaws.com/0b8dae26-2565-4356-bdc1-23d48ca44237/96f81532-cec1-4d92-bae3-a9d9d81fadf0/IMG_0705.png)
 
 ![Dashboard Design](https://github.com/user-attachments/assets/4896d5d2-7ede-4fa7-b347-d225927f0d11)
 
