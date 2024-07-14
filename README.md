@@ -30,95 +30,8 @@ Many organizations struggle to aggregate and visualize their financial data effe
     - **Transactions Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet={SheetName})
     - **Chart of Accounts:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet={SheetName})
 
-### 2. Data Modelling 📊
 
-The data modeling involved structuring the extracted financial data to ensure accurate relationships between different datasets, facilitating effective analysis and reporting.
-
-### 3. Data Tables 📋
-
-The main data tables include:
-- Transactions Table
-- Chart of Accounts Table
-- Monthly Aggregated Data Table
-
-### 4. DAX Measures & KPIs 🧮
-
-Key measures include:
-- Year-to-Date Earnings
-- Year-to-Date Spending
-- Profit Margin
-- Advertisement Spend Percentage
-- Burn Rate
-- Cash in Hand
-
-### 5. Dashboard Design **🎨**
-
-#### Summary
-
-- **KPIs (DONE)**
-    - YTD Earnings
-    - YTD Spending
-    - Profit Margin
-    - Advertisement %
-    - Burn Rate
-    - Cash in Hand
-    - Merchant Reserves
-- **Chart 01 (DONE)**
-    - Income (Last 12 Months) - Column Chart
-    - Income Comparison (Current vs Previous Year) - Line Chart
-    - Income vs. Expenses (Last 12 Months) - Column Chart
-    - Expenses % (Last 12 Months) - Column Chart
-    - Advertisement % (Last 12 Months) - Column Chart
-- **Chart 02**
-    - Cashflow Over Time (Last 12 Months) - Line Chart
-    - Cash Disbursement by Account - Bar Chart
-    - Merchant Account Reserves (Last 12 Months) - Column Chart
-- **Chart 03**
-    - Top 05 Expense Categories (Last 12 Months) - Bar Chart
-    - Payroll by Department (Last 12 Months) - Radar Chart
-    - Top Income Sources (Last 12 Months) - Donut Chart
-- **Chart 04**
-    - Summarized Profit and Loss for Last 3 Months - Tabular
-    - Bubble Chart comparing Ads and Revenue
-
-#### Profitability
-
-- Runway
-- Merchant Fees Percentage
-- Merchant Chargeback Percentage
-
-#### Cashflow
-
-Detailed cashflow analysis showing trends and insights over the last 12 months.
-
-#### Merchant Account
-
-Overview of merchant account performance, including reserves and chargeback rates.
-
-#### Email Campaigns
-
-Analysis of email campaign performance and its impact on revenue.
-
-#### Google Ads
-
-Insights on the effectiveness of Google Ads campaigns in driving sales.
-
-### Color Palettes
-
-**Main Theme:**
-
-- **Background:** DARK GRAY
-- **Graph Area:** LIGHT GRAY
-- **Income:** BLUE JEANS
-- **Expenses:** BITTERSWEET
-- **Cash Inflow:** MINT
-- **Cash Outflow:** GRAPEFRUIT
-
-### Design Design
-
-![Dashboard Design](https://github.com/user-attachments/assets/4896d5d2-7ede-4fa7-b347-d225927f0d11)
-
-### Data Aggregation Script
+### 2. Data Aggregation Script
 
 Here is the Python code used to combine the data from Google Sheets:
 
@@ -210,6 +123,96 @@ else:
 
 print("Process complete.")
 ```
+
+
+### 3. Data Modelling 📊
+
+The data modeling involved structuring the extracted financial data to ensure accurate relationships between different datasets, facilitating effective analysis and reporting.
+
+### 4. Data Tables 📋
+
+The main data tables include:
+- Transactions Table
+- Chart of Accounts Table
+- Monthly Aggregated Data Table
+
+### 5. DAX Measures & KPIs 🧮
+
+Key measures include:
+- Year-to-Date Earnings
+- Year-to-Date Spending
+- Profit Margin
+- Advertisement Spend Percentage
+- Burn Rate
+- Cash in Hand
+
+### 6. Dashboard Design **🎨**
+
+#### Summary
+
+- **KPIs (DONE)**
+    - YTD Earnings
+    - YTD Spending
+    - Profit Margin
+    - Advertisement %
+    - Burn Rate
+    - Cash in Hand
+    - Merchant Reserves
+- **Chart 01 (DONE)**
+    - Income (Last 12 Months) - Column Chart
+    - Income Comparison (Current vs Previous Year) - Line Chart
+    - Income vs. Expenses (Last 12 Months) - Column Chart
+    - Expenses % (Last 12 Months) - Column Chart
+    - Advertisement % (Last 12 Months) - Column Chart
+- **Chart 02**
+    - Cashflow Over Time (Last 12 Months) - Line Chart
+    - Cash Disbursement by Account - Bar Chart
+    - Merchant Account Reserves (Last 12 Months) - Column Chart
+- **Chart 03**
+    - Top 05 Expense Categories (Last 12 Months) - Bar Chart
+    - Payroll by Department (Last 12 Months) - Radar Chart
+    - Top Income Sources (Last 12 Months) - Donut Chart
+- **Chart 04**
+    - Summarized Profit and Loss for Last 3 Months - Tabular
+    - Bubble Chart comparing Ads and Revenue
+
+#### Profitability
+
+- Runway
+- Merchant Fees Percentage
+- Merchant Chargeback Percentage
+
+#### Cashflow
+
+Detailed cashflow analysis showing trends and insights over the last 12 months.
+
+#### Merchant Account
+
+Overview of merchant account performance, including reserves and chargeback rates.
+
+#### Email Campaigns
+
+Analysis of email campaign performance and its impact on revenue.
+
+#### Google Ads
+
+Insights on the effectiveness of Google Ads campaigns in driving sales.
+
+### Color Palettes
+
+**Main Theme:**
+
+- **Background:** DARK GRAY
+- **Graph Area:** LIGHT GRAY
+- **Income:** BLUE JEANS
+- **Expenses:** BITTERSWEET
+- **Cash Inflow:** MINT
+- **Cash Outflow:** GRAPEFRUIT
+
+### Dashboard Design
+
+![Dashboard Design](https://github.com/user-attachments/assets/4896d5d2-7ede-4fa7-b347-d225927f0d11)
+
 
 ## Conclusion & Future Enhancements 🏁
 
