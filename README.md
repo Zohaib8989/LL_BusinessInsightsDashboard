@@ -104,11 +104,9 @@ Accounts Cash](https://docs.google.com/spreadsheets/d/1G4BIDebBGKR-BSHPDdJK_vYjS
 - **Cash Inflow:** MINT
 - **Cash Outflow:** GRAPEFRUITE
 
+### Design Design
 
 ![Dashboard Design](https://github.com/user-attachments/assets/4896d5d2-7ede-4fa7-b347-d225927f0d11)
-
-
-### Design Inspiration
 
 [Details about design inspiration here]
 
