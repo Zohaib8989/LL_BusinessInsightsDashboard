@@ -22,13 +22,13 @@ Many organizations struggle to aggregate and visualize their financial data effe
 #### Link to Google Sheets
 
 - **Limitless Life LLC**
-    - **Transactions Cash:** [Transactions Cash](https://docs.google.com/spreadsheets/d/1IRU0PIgANIirj3QKQkicjjvpONRlIeivVDaY7FxQePE/gviz/tq?tqx=out:csv&sheet=Journal)
-    - **Transactions Accrual:** [Transactions Accrual](https://docs.google.com/spreadsheets/d/1VRE84IzJiiOgLinL44K4VqsoEydz24twaueZgPQ40V8/gviz/tq?tqx=out:csv&sheet=Journal)
-    - **Chart of Accounts Cash:** [Chart of Accounts Cash](https://docs.google.com/spreadsheets/d/1G4BIDebBGKR-BSHPDdJK_vYjSufjEDzOiFwv6r-oL8Q/gviz/tq?tqx=out:csv&sheet=Account_List)
-    - **Email Campaign:** [Email Campaign](https://docs.google.com/spreadsheets/d/1UsnkZxjgJJp7piBU8qpMdsd4graXxX41WIIXIcfsmCk/gviz/tq?tqx=out:csv&sheet=Campaigns)
+    - **Transactions Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Journal)
+    - **Transactions Accrual:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Journal)
+    - **Chart of Accounts Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Account_List)
+    - **Email Campaign:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Campaigns)
 - **Info Up LLC**
-    - **Transactions Cash:** [Transactions Cash](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet={SheetName})
-    - **Chart of Accounts:** [Chart of Accounts](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet={SheetName})
+    - **Transactions Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet={SheetName})
+    - **Chart of Accounts:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet={SheetName})
 
 ### 2. Data Modelling 📊
 
@@ -118,6 +118,99 @@ Insights on the effectiveness of Google Ads campaigns in driving sales.
 
 ![Dashboard Design](https://github.com/user-attachments/assets/4896d5d2-7ede-4fa7-b347-d225927f0d11)
 
+### Data Aggregation Script
+
+Here is the Python code used to combine the data from Google Sheets:
+
+```python
+from googleapiclient.discovery import build
+from google.oauth2.service_account import Credentials
+from googleapiclient.http import MediaIoBaseUpload
+import gspread
+import pandas as pd
+import io
+
+# Define the scope
+scope = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive'
+]
+
+# Add your credentials
+creds = Credentials.from_service_account_file('path/to/your/key.json', scopes=scope)
+client = gspread.authorize(creds)
+
+# Google Drive API setup
+drive_service = build('drive', 'v3', credentials=creds)
+
+# Folder ID (replace with your folder ID)
+folder_id = 'your_folder_id'
+
+# List all files in the folder
+results = drive_service.files().list(
+    q=f"'{folder_id}' in parents and trashed=false",
+    pageSize=1000,
+    fields="files(id, name, mimeType)"
+).execute()
+items = results.get('files', [])
+
+# Process Google Sheets files
+dataframes = []
+
+for item in items:
+    if item['mimeType'] == 'application/vnd.google-apps.spreadsheet':
+        try:
+            sheet = client.open_by_key(item['id']).sheet1
+            df = pd.DataFrame(sheet.get_all_records())
+            dataframes.append(df)
+        except Exception as e:
+            print(f"An error occurred processing file {item['name']} ({item['id']}): {e}")
+
+# Combine all dataframes into a single one
+if dataframes:
+    combined_df = pd.concat(dataframes, ignore_index=True)
+    
+    # Use an in-memory buffer to save the CSV data
+    csv_buffer = io.BytesIO()
+    combined_df.to_csv(csv_buffer, index=False, encoding='utf-8')
+    csv_buffer.seek(0)
+    print("Data combined and saved to an in-memory buffer.")
+else:
+    print("No Google Sheets files were processed.")
+
+# Check if the combined_data.csv file exists in Google Drive
+existing_file_id = None
+for item in items:
+    if item['name'] == 'combined_data.csv':
+        existing_file_id = item['id']
+        break
+
+# Upload or update the file on Google Drive
+file_metadata = {
+    'name': 'combined_data.csv',
+    'parents': [folder_id]
+}
+media = MediaIoBaseUpload(csv_buffer, mimetype='text/csv')
+
+if existing_file_id:
+    # Update the existing file
+    drive_service.files().update(
+        fileId=existing_file_id,
+        media_body=media
+    ).execute()
+    print("File updated on Google Drive with ID:", existing_file_id)
+else:
+    # Upload as a new file
+    drive_service.files().create(
+        body=file_metadata,
+        media_body=media,
+        fields='id'
+    ).execute()
+    print("File uploaded to Google Drive")
+
+print("Process complete.")
+```
+
 ## Conclusion & Future Enhancements 🏁
 
 ### Conclusions
@@ -137,7 +230,3 @@ Insights on the effectiveness of Google Ads campaigns in driving sales.
 ## Contact 📧
 
 For any queries or further information, please contact me at [zohaib8989@gmail.com](mailto:zohaib8989@gmail.com)
-
---- 
-
-Feel free to adjust any sections as needed!
