@@ -150,7 +150,7 @@ Key measures include:
 
 #### Summary
 
-- **KPIs (DONE)**
+- **KPIs**
     - YTD Earnings
     - YTD Spending
     - Profit Margin
@@ -158,7 +158,7 @@ Key measures include:
     - Burn Rate
     - Cash in Hand
     - Merchant Reserves
-- **Chart 01 (DONE)**
+- **Chart 01**
     - Income (Last 12 Months) - Column Chart
     - Income Comparison (Current vs Previous Year) - Line Chart
     - Income vs. Expenses (Last 12 Months) - Column Chart
@@ -202,12 +202,8 @@ Insights on the effectiveness of Google Ads campaigns in driving sales.
 
 **Main Theme:**
 
-- **Background:** DARK GRAY
-- **Graph Area:** LIGHT GRAY
-- **Income:** BLUE JEANS
-- **Expenses:** BITTERSWEET
-- **Cash Inflow:** MINT
-- **Cash Outflow:** GRAPEFRUIT
+![Color Pallets](https://github.com/user-attachments/assets/095019ff-25f4-40de-bccd-f41e3454c025)
+
 
 ### Dashboard Design
 
