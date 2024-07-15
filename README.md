@@ -1,4 +1,4 @@
-# QuickBooks Financial Visualization in Power BI
+# Holistic Business Insights Dashboard
 
 ## Introduction 👋
 
