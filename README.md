@@ -132,14 +132,35 @@ The data modeling involved structuring the extracted financial data to ensure ac
 ### 3. Data Tables 📋
 
 The main data tables include:
-- Transactions Table
+- Calendar Table
 - Chart of Accounts Table
-- Monthly Aggregated Data Table
+- Journal Entries Tabel (Combined CSV)
 
 ### 4. DAX Measures & KPIs 🧮
 
+#### Summary
+
 Key measures include:
-- Year-to-Date Earnings
+- YTD Income
+
+``` DAX
+YTDIncome = 
+    ABS(
+        CALCULATE(
+            SUM(JournalEntries[Debit]) - SUM(JournalEntries[Credit]), // Calculate net income (Debit - Credit)
+            FILTER(
+                ChartOfAccounts,
+                ChartOfAccounts[Classification] = "Income" // Filter to include only income accounts
+            ),
+            FILTER(
+                CalenderTable,
+                CalenderTable[Date] >= EOMONTH(TODAY(), -MONTH(TODAY())) + 1 && // From the first day of the current year
+                CalenderTable[Date] <= EOMONTH(TODAY(), -1) // Until the last day of the previous month
+            )
+        )
+    )
+```
+
 - Year-to-Date Spending
 - Profit Margin
 - Advertisement Spend Percentage
