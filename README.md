@@ -21,7 +21,7 @@ The client was struggling to have a single source of truth to monitor the financ
 
 ### 1. Data Source and Structure 🗂️
 
-### 2. Data Aggregation Script
+#### Data Aggregation Script
 
 Here is the Python code used to combine the data from Google Sheets:
 
@@ -119,18 +119,18 @@ print("Process complete.")
 - **Limitless Life LLC**
     - **Transactions Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Journal)
 
-### 3. Data Modelling 📊
+### 2. Data Modelling 📊
 
 The data modeling involved structuring the extracted financial data to ensure accurate relationships between different datasets, facilitating effective analysis and reporting.
 
-### 4. Data Tables 📋
+### 3. Data Tables 📋
 
 The main data tables include:
 - Transactions Table
 - Chart of Accounts Table
 - Monthly Aggregated Data Table
 
-### 5. DAX Measures & KPIs 🧮
+### 4. DAX Measures & KPIs 🧮
 
 Key measures include:
 - Year-to-Date Earnings
@@ -139,8 +139,6 @@ Key measures include:
 - Advertisement Spend Percentage
 - Burn Rate
 - Cash in Hand
-
-### 6. Dashboard Design **🎨**
 
 #### Summary
 
@@ -192,17 +190,17 @@ Analysis of email campaign performance and its impact on revenue.
 
 Insights on the effectiveness of Google Ads campaigns in driving sales.
 
+### 5. Dashboard Design **🎨**
+
 ### Color Palettes
 
 **Main Theme:**
 
 ![Color Pallets](https://github.com/user-attachments/assets/095019ff-25f4-40de-bccd-f41e3454c025)
 
-
 ### Dashboard Design
 
 ![Dashboard Design](https://github.com/user-attachments/assets/4896d5d2-7ede-4fa7-b347-d225927f0d11)
-
 
 ## Conclusion & Future Enhancements 🏁
 
