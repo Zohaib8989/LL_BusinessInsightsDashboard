@@ -132,9 +132,9 @@ The data modeling involved structuring the extracted financial data to ensure ac
 ### 3. Data Tables 📋
 
 The main data tables include:
-- Calendar Table
-- Chart of Accounts Table
-- Journal Entries Tabel (Combined CSV)
+- CalendarTable (Contains the Dat hierarchy)
+- ChartOfAccounts (Contains the Chart of Accounts from QuickBooks Online)
+- JournalEntries (Contain all the Journal Entries merged into a single csv via python)
 
 ### 4. DAX Measures & KPIs 🧮
 
