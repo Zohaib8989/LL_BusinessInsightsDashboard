@@ -251,6 +251,11 @@ GreetingMessage =
 
 ```
 
+- Snapshot of all the Measures
+
+![image](https://github.com/user-attachments/assets/a5156170-697a-471b-b05f-695b598ff01f)
+
+
 ### 5. Dashboard Design **🎨**
 
 #### Design & Layout
