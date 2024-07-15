@@ -258,9 +258,13 @@ GreetingMessage =
 
 ### 5. Dashboard Design **🎨**
 
-#### Design & Layout
+#### Desktop Design & Layout
 
 ![Dashboard Design](https://github.com/user-attachments/assets/4896d5d2-7ede-4fa7-b347-d225927f0d11)
+
+#### Mobile Design & Layout
+
+![image](https://github.com/user-attachments/assets/547827fc-9872-4085-98a6-cdf4461a8c7f)
 
 #### Color Palettes
 
