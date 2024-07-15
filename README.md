@@ -2,34 +2,24 @@
 
 ## Introduction 👋
 
-Welcome to Limitless Life LLC's repository. This project aims to develop a comprehensive financial dashboard using Power BI, extracting and visualizing data from QuickBooks Online to provide valuable insights for informed decision-making.
+This project aims to develop a comprehensive financial dashboard using Power BI, extracting and visualizing data from QuickBooks Online and several other sources like Google AdSpend, Google Sheets, etc to provide valuable insights for informed decision-making.
 
 ## Problem Statement 🔍
 
-Many organizations struggle to aggregate and visualize their financial data effectively, leading to missed opportunities for operational improvements and cost savings. This project addresses the need for a centralized dashboard that offers real-time financial insights.
+The client was struggling to have a single source of truth to monitor the financial matrices from several different data sources. This project addresses the need to have a centralized Dashboard that offers key financial KPIs & insights for the client to make timely and efficient decisions.
 
 ## Deliverables 📦
 
-- Automated data extraction process from QuickBooks Online
-- Consolidated CSV files stored in Google Drive
-- A comprehensive Power BI dashboard visualizing key financial metrics
+- Combining the monthly csv files extracted from QuickBooks Online in Google Drive into combined.csv and upload that to the same Google Drive folder using a Python script
+- Get the Email Campaign Data maintained in a Google Sheet and link it with Power BI
+- Fetch data from Google Ad into Power BI to visualise
+- Get data from several Merchant Accounts to be visualized in Power BI
+- Create a comprehensive Financial Dashboard in Power BI visualizing all the key financial metrics
 - Documentation of the entire process for reproducibility
 
 ## Process Guide 📝
 
 ### 1. Data Source and Structure 🗂️
-
-#### Link to Google Sheets
-
-- **Limitless Life LLC**
-    - **Transactions Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Journal)
-    - **Transactions Accrual:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Journal)
-    - **Chart of Accounts Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Account_List)
-    - **Email Campaign:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Campaigns)
-- **Info Up LLC**
-    - **Transactions Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet={SheetName})
-    - **Chart of Accounts:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet={SheetName})
-
 
 ### 2. Data Aggregation Script
 
@@ -124,6 +114,10 @@ else:
 print("Process complete.")
 ```
 
+#### Link to Google Sheets
+
+- **Limitless Life LLC**
+    - **Transactions Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Journal)
 
 ### 3. Data Modelling 📊
 
