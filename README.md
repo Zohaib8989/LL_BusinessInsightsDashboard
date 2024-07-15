@@ -161,8 +161,47 @@ YTDIncome =
     )
 ```
 
-- Year-to-Date Spending
-- Profit Margin
+- Last12Months Income
+
+``` DAX
+12MonthsIncome = 
+    ABS(
+        CALCULATE(
+            SUM(JournalEntries[Debit]) - SUM(JournalEntries[Credit]), // Calculate net income (Debits - Credits)
+            FILTER(
+                ChartOfAccounts,
+                ChartOfAccounts[Classification] = "Income" // Filter to include only income accounts
+            ),
+            FILTER(
+                CalenderTable,
+                CalenderTable[Date] >= EOMONTH(TODAY(), -13) + 1 && // From the first day of 12 months ago
+                CalenderTable[Date] <= EOMONTH(TODAY(), -1) + 1 // Until the last day of the previous month
+            )
+        )
+    ) // Return the absolute value of the calculated income over the last 12 months
+```
+
+- Burn Rate
+
+``` DAX
+BurnRate = 
+    DIVIDE(
+        CALCULATE(
+            SUM(JournalEntries[Debit]) - SUM(JournalEntries[Credit]),
+            FILTER(
+                ChartOfAccounts,
+                ChartOfAccounts[Classification] = "Expense" // to filter the transaction just for expecount
+            ),
+            FILTER(
+                CalenderTable,
+                CalenderTable[Date] >= EOMONTH(TODAY(), -4) + 1 && // to calculate from first day of third last month
+                CalenderTable[Date] < EOMONTH(TODAY(), -1) + 1 // to calculate until last day of previous month
+            )
+        ),
+        3
+    )
+```
+  
 - Advertisement Spend Percentage
 - Burn Rate
 - Cash in Hand
