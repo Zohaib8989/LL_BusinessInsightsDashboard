@@ -116,7 +116,11 @@ print("Process complete.")
 
 #### Link to Google Sheets
 
-- **Limitless Life LLC** (https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Journal)
+- Combined csv was then linked to Power BI using
+- Get Data >> Web
+- https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=SheetName
+   - SpreadSheetID is the specific portion of the csv URL
+   - Name is the Tab Name from the Google Sheet
 
 ### 2. Data Modelling 📊
 
