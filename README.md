@@ -116,8 +116,7 @@ print("Process complete.")
 
 #### Link to Google Sheets
 
-- **Limitless Life LLC**
-    - **Transactions Cash:** [Link](https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Journal)
+- **Limitless Life LLC** (https://docs.google.com/spreadsheets/d/{SpreadsheetID}/gviz/tq?tqx=out:csv&sheet=Journal)
 
 ### 2. Data Modelling 📊
 
