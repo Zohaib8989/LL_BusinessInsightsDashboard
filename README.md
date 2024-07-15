@@ -126,6 +126,9 @@ print("Process complete.")
 
 The data modeling involved structuring the extracted financial data to ensure accurate relationships between different datasets, facilitating effective analysis and reporting.
 
+![image](https://github.com/user-attachments/assets/03f3f874-d141-489d-ab96-bb7e8aab5fa9)
+
+
 ### 3. Data Tables 📋
 
 The main data tables include:
