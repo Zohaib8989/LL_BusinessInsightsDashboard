@@ -138,7 +138,7 @@ The main data tables include:
 
 ### 4. DAX Measures & KPIs 🧮
 
-#### Summary
+#### Summary Tab
 
 Key measures include:
 - YTD Income
@@ -202,59 +202,54 @@ BurnRate =
     )
 ```
   
-- Advertisement Spend Percentage
-- Burn Rate
-- Cash in Hand
-
-#### Summary
-
-- **KPIs**
-    - YTD Earnings
-    - YTD Spending
-    - Profit Margin
-    - Advertisement %
-    - Burn Rate
-    - Cash in Hand
-    - Merchant Reserves
-- **Chart 01**
-    - Income (Last 12 Months) - Column Chart
-    - Income Comparison (Current vs Previous Year) - Line Chart
-    - Income vs. Expenses (Last 12 Months) - Column Chart
-    - Expenses % (Last 12 Months) - Column Chart
-    - Advertisement % (Last 12 Months) - Column Chart
-- **Chart 02**
-    - Cashflow Over Time (Last 12 Months) - Line Chart
-    - Cash Disbursement by Account - Bar Chart
-    - Merchant Account Reserves (Last 12 Months) - Column Chart
-- **Chart 03**
-    - Top 05 Expense Categories (Last 12 Months) - Bar Chart
-    - Payroll by Department (Last 12 Months) - Radar Chart
-    - Top Income Sources (Last 12 Months) - Donut Chart
-- **Chart 04**
-    - Summarized Profit and Loss for Last 3 Months - Tabular
-    - Bubble Chart comparing Ads and Revenue
-
-#### Profitability
-
 - Runway
-- Merchant Fees Percentage
-- Merchant Chargeback Percentage
 
-#### Cashflow
+``` DAX
+Runway = 
+    FORMAT(
+        DIVIDE(
+            _CashMeasures[CashBalance],
+            [BurnRate]
+        ),
+        "###,##0.0"
+    ) & " Months"
+```
 
-Detailed cashflow analysis showing trends and insights over the last 12 months.
+- Cash Running Balance
 
-#### Merchant Account
+``` DAX
+CashBalance = 
+CALCULATE(
+    // Calculate the net sum of Debit and Credit for Bank accounts
+    CALCULATE(
+        SUM(JournalEntries[Debit]) - SUM(JournalEntries[Credit]),
+        FILTER(
+            ChartOfAccounts, 
+            // Filter for accounts of type "Bank"
+            ChartOfAccounts[Type] = "Bank"
+        )
+    ),
+    // Filter dates to consider only those that are on or after the selected date
+    FILTER(
+        ALLSELECTED('CalenderTable'[Date]),
+        ISONORAFTER('CalenderTable'[Date], MAX('CalenderTable'[Date]), DESC)
+    )
+)
+```
+- Greetings
 
-Overview of merchant account performance, including reserves and chargeback rates.
+``` DAX
+GreetingMessage = 
+    VAR CurrentHour = HOUR(NOW())
+    RETURN
+    SWITCH(
+        TRUE(),
+        CurrentHour < 12, "Good Morning Erik 🌤️",
+        CurrentHour < 18, "Good Afternoon Erik 🌞",
+        "Good Evening Erik 🌙"
+    )
 
-#### Email Campaigns
-
-Analysis of email campaign performance and its impact on revenue.
-
-#### Google Ads
-
-Insights on the effectiveness of Google Ads campaigns in driving sales.
+```
 
 ### 5. Dashboard Design **🎨**
 
