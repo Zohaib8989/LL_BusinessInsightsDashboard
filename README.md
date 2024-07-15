@@ -192,13 +192,11 @@ Insights on the effectiveness of Google Ads campaigns in driving sales.
 
 ### 5. Dashboard Design **🎨**
 
-### Color Palettes
-
-### Design & Layout
+#### Design & Layout
 
 ![Dashboard Design](https://github.com/user-attachments/assets/4896d5d2-7ede-4fa7-b347-d225927f0d11)
 
-**Main Theme:**
+#### Color Palettes
 
 ![Color Pallets](https://github.com/user-attachments/assets/095019ff-25f4-40de-bccd-f41e3454c025)
 
