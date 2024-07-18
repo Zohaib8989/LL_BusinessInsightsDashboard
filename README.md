@@ -12,7 +12,7 @@ The client was struggling to have a single source of truth to monitor the financ
 
 - Combining the monthly csv files extracted from QuickBooks Online in Google Drive into combined.csv and upload that to the same Google Drive folder using a Python script
 - Get the Email Campaign Data maintained in a Google Sheet and link it with Power BI
-- Fetch data from Google Ad into Power BI to visualise
+- Fetch data from Google Ad into Power BI to visualize
 - Get data from several Merchant Accounts to be visualized in Power BI
 - Create a comprehensive Financial Dashboard in Power BI visualizing all the key financial metrics
 - Documentation of the entire process for reproducibility
